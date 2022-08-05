@@ -1,5 +1,5 @@
 <h1 align="center">
-  Factory four challenge
+  Factory Four challenge
 </h1>
 
 <h3>About Stack:</h3>
