@@ -2,23 +2,17 @@
   Factory four challenge
 </h1>
 
+<h3>About Stack:</h3>
 
-## Development
+- I use Chakra-UI for styling. I really enjoy this approach for bootstrapping small projects and getting quick results. </br>
 
-To get a local copy of the code, clone it using git:
+- Axios as fecthing library. </br>
 
-```
-git clone https://github.com/SafdarJamal/vite-template-react.git
-cd vite-template-react
-```
+- Because it's a small project i felt more comfortable using Javascript. </br>
 
-Make it your own:
+- The project it's hosted using <strong>Vercel</strong>: https://factory-four-challenge-kappa.vercel.app/ 
 
-```
-rm -rf .git && git init && npm init
-git add .
-git commit -m "Initial commit"
-```
+
 
 Install dependencies:
 
@@ -44,7 +38,8 @@ In this project, you can run the following scripts:
 | npm run build | Builds the app for production to the `dist` folder. |
 | npm run serve | Serves the production build from the `dist` folder. |
 
-## Credits
+## Credits:
+This project was bootstrapped using this free template: https://github.com/SafdarJamal/vite-template-react.git
 
 Vite Template React is built and maintained by [Safdar Jamal](https://safdarjamal.github.io).
 
