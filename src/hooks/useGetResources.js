@@ -1,13 +1,13 @@
 import { useCallback, useEffect, useState } from 'react';
 import axios from 'axios';
-import { apiResourcesNames } from '~/helpers/resources';
-import { Resources } from '~/types';
-
+import { apiResourcesNames } from '@/helpers/resources';
+import { getResource } from '../services/getResource';
 
 const URL = 'https://api.factoryfour.com/';
+const headers = { 'Access-Control-Allow-Origin': '*' };
 
 export const useGetResources = (SECONDS_FOR_REFECTH = 15) => {
-  const [resources, setResources] = useState<Resources>(() =>
+  const [resources, setResources] = useState(() =>
     apiResourcesNames.reduce((current, item) => {
       current[item] = {};
       return current;
@@ -16,8 +16,7 @@ export const useGetResources = (SECONDS_FOR_REFECTH = 15) => {
 
   const getResources = useCallback(() => {
     apiResourcesNames.map((resource) => {
-      axios
-        .get(`${URL}${resource}/health/status`)
+      getResource(resource)
         .then((res) => setResources((prevState) => ({ ...prevState, [resource]: res.data })))
         .catch((err) => {
           setResources((prevState) => ({
@@ -25,7 +24,7 @@ export const useGetResources = (SECONDS_FOR_REFECTH = 15) => {
             [resource]: {
               success: false,
               message: err.message ? err.message : 'error',
-              status: err.response.status,
+              status: err.response.status ? err.response.status : 'OUTAGE',
             },
           }));
         });
