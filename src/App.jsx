@@ -1,12 +1,10 @@
-import React from 'react';
 import { ChakraProvider } from '@chakra-ui/react';
-
-const App = () => {
+import { Dashboard } from '@/components/Dashboard/Dashboard';
+function App() {
   return (
     <ChakraProvider>
-      <div>hola</div>
+      <Dashboard />
     </ChakraProvider>
   );
-};
-
+}
 export default App;
