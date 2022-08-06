@@ -1,3 +1,4 @@
+import React from 'react';
 import { Text, Stack } from '@chakra-ui/react';
 
 export const AppBar = () => {

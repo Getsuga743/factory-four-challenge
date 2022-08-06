@@ -1,10 +1,11 @@
+import React from 'react';
 import PropTypes from 'prop-types';
 import { Flex, Text } from '@chakra-ui/react';
 import { formatTime } from '@/helpers/formatTime';
 import { Spinner } from '@chakra-ui/react';
 
 export const StatusCard = ({ data, name }) => {
-  const { success, message, hostname, time, status } = data;
+  const { success, message, hostname, time, error } = data;
   const formatedTime = formatTime(time);
 
   if (success === undefined) {
@@ -21,7 +22,14 @@ export const StatusCard = ({ data, name }) => {
         padding={'1rem'}
         margin='auto'
       >
-        <Spinner thickness='4px' margin='auto' speed='0.65s' emptyColor='gray.200' color='blue.800' size='xl' />
+        <Spinner
+          thickness='4px'
+          margin='auto'
+          speed='0.65s'
+          emptyColor='gray.200'
+          color='blue.800'
+          size='xl'
+        />
       </Flex>
     );
   }
@@ -110,7 +118,7 @@ export const StatusCard = ({ data, name }) => {
         fontSize={'2xl'}
         fontWeight='bold'
       >
-        {status}
+        {error}
       </Text>
       <Text
         textAlign='center'
@@ -131,7 +139,7 @@ StatusCard.propTypes = {
   data: PropTypes.shape({
     hostname: PropTypes.string,
     message: PropTypes.string,
-    status: PropTypes.any,
+    error: PropTypes.any,
     success: PropTypes.bool,
     time: PropTypes.number,
   }),
