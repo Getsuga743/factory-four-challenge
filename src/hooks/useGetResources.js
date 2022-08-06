@@ -1,10 +1,6 @@
 import { useCallback, useEffect, useState } from 'react';
-import axios from 'axios';
 import { apiResourcesNames } from '@/helpers/resources';
 import { getResource } from '../services/getResource';
-
-const URL = 'https://api.factoryfour.com/';
-const headers = { 'Access-Control-Allow-Origin': '*' };
 
 export const useGetResources = (SECONDS_FOR_REFECTH = 15) => {
   const [resources, setResources] = useState(() =>

@@ -1,3 +1,4 @@
+import React from 'react';
 import { ChakraProvider } from '@chakra-ui/react';
 import { Dashboard } from '@/components/Dashboard/Dashboard';
 function App() {
