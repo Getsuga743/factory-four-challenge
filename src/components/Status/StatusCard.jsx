@@ -114,9 +114,10 @@ export const StatusCard = ({ data, name }) => {
         borderRadius='md'
         backgroundColor={'red.700'}
         color='white'
-        marginX='2rem'
         fontSize={'2xl'}
         fontWeight='bold'
+        width='80%'
+        margin={'auto'}
       >
         {error}
       </Text>
