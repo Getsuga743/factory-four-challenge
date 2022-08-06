@@ -1,3 +1,4 @@
+import React from 'react';
 import PropTypes from 'prop-types';
 import { Flex, Text } from '@chakra-ui/react';
 import { formatTime } from '@/helpers/formatTime';
@@ -21,7 +22,14 @@ export const StatusCard = ({ data, name }) => {
         padding={'1rem'}
         margin='auto'
       >
-        <Spinner thickness='4px' margin='auto' speed='0.65s' emptyColor='gray.200' color='blue.800' size='xl' />
+        <Spinner
+          thickness='4px'
+          margin='auto'
+          speed='0.65s'
+          emptyColor='gray.200'
+          color='blue.800'
+          size='xl'
+        />
       </Flex>
     );
   }
