@@ -5,7 +5,7 @@ import { formatTime } from '@/helpers/formatTime';
 import { Spinner } from '@chakra-ui/react';
 
 export const StatusCard = ({ data, name }) => {
-  const { success, message, hostname, time, status } = data;
+  const { success, message, hostname, time, error } = data;
   const formatedTime = formatTime(time);
 
   if (success === undefined) {
@@ -114,11 +114,12 @@ export const StatusCard = ({ data, name }) => {
         borderRadius='md'
         backgroundColor={'red.700'}
         color='white'
-        marginX='2rem'
         fontSize={'2xl'}
         fontWeight='bold'
+        width='80%'
+        margin={'auto'}
       >
-        {status}
+        {error}
       </Text>
       <Text
         textAlign='center'
@@ -139,7 +140,7 @@ StatusCard.propTypes = {
   data: PropTypes.shape({
     hostname: PropTypes.string,
     message: PropTypes.string,
-    status: PropTypes.any,
+    error: PropTypes.any,
     success: PropTypes.bool,
     time: PropTypes.number,
   }),

@@ -1,26 +1,36 @@
 import { useCallback, useEffect, useState } from 'react';
-import { apiResourcesNames } from '@/helpers/resources';
 import { getResource } from '../services/getResource';
 
-export const useGetResources = (SECONDS_FOR_REFECTH = 15) => {
+//Get API's data from the array of endPoints, and set timer for SECONDS_FOR_REFECTH seconds after which getResources will be called again.
+export const useGetResources = (SECONDS_FOR_REFECTH = 15, endPoints) => {
   const [resources, setResources] = useState(() =>
-    apiResourcesNames.reduce((current, item) => {
+    endPoints.reduce((current, item) => {
       current[item] = {};
       return current;
     }, {}),
   );
-
+  // GET data for each endpoint.
   const getResources = useCallback(() => {
-    apiResourcesNames.map((resource) => {
+    endPoints.map((resource) => {
       getResource(resource)
-        .then((res) => setResources((prevState) => ({ ...prevState, [resource]: res.data })))
+        .then(({ data }) => {
+          setResources((prevState) => ({
+            ...prevState,
+            [resource]: {
+              hostname: data.hostname,
+              message: data.message,
+              success: data.success,
+              time: data.time,
+            },
+          }));
+        })
         .catch((err) => {
           setResources((prevState) => ({
             ...prevState,
             [resource]: {
               success: false,
               message: err.message ? err.message : 'error',
-              status: err.response.status ? err.response.status : 'OUTAGE',
+              error: `Error: ${err.response.status ? err.response.status : 'OUTAGE'}`,
             },
           }));
         });
