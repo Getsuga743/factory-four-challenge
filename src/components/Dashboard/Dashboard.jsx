@@ -1,7 +1,7 @@
 import React from 'react';
 import { Flex } from '@chakra-ui/react';
 import { AppBar } from '../AppBar/AppBar';
-import { Status } from '../StatusCards/Status';
+import { Status } from '../Status/Status';
 import { useGetResources } from '@/hooks/useGetResources';
 
 // Modify this value for changing the time in seconds between each refetch.
