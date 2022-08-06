@@ -1,7 +1,8 @@
 {
   "env": {
     "browser": true,
-    "es2021": true
+    "es2021": true,
+    "jest": true
   },
   "extends": [
     "eslint:recommended",
@@ -18,7 +19,7 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "plugins": ["react", "import", "jsx-a11y", "react-hooks", "prettier", "jest"],
+  "plugins": ["react", "import", "jsx-a11y", "react-hooks", "prettier", "jest","testing-library"],
   "rules": {
     "prettier/prettier": [
       "warn",

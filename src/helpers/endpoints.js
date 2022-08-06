@@ -1,4 +1,4 @@
-export const apiResourcesNames = [
+export const endpoints = [
   'accounts',
   'assets',
   'customers',
