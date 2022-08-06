@@ -4,7 +4,7 @@
 
 <h3>About Stack:</h3>
 
-- I use Chakra-UI for styling. I really enjoy this approach for bootstrapping small projects and getting quick results. </br>
+- Chakra-UI for styling. I really enjoy this approach for bootstrapping small projects and getting quick results. </br>
 
 - Axios as fecthing library. </br>
 
