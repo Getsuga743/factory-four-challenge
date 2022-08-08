@@ -37,6 +37,7 @@ In this project, you can run the following scripts:
 | npm run dev   | Runs the app in the development mode.               |
 | npm run build | Builds the app for production to the `dist` folder. |
 | npm run serve | Serves the production build from the `dist` folder. |
+| npm run test  | Run jest tests.                                     |
 
 ## Credits:
 This project was bootstrapped using this free template: https://github.com/SafdarJamal/vite-template-react.git
