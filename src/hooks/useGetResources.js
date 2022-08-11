@@ -11,7 +11,7 @@ export const useGetResources = (SECONDS_FOR_REFECTH = 15, endPoints) => {
   );
   // GET data for each endpoint.
   const getResources = useCallback(() => {
-    endPoints.map((resource) => {
+    endPoints.forEach((resource) => {
       getResource(resource)
         .then(({ data }) => {
           setResources((prevState) => ({
